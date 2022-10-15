@@ -1,82 +1,151 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-    <head>
-        <meta charset=utf-8 />
-        <title>Another Dumb Meme</title>
-        <link rel="stylesheet" href="assets/css/styles.css">
-        <script src="assets/js/audiohandler.js" type="text/javascript"></script>
-    </head>
-    <body onload="init();">
-        <div class="noSelect">
+<head>  
+	<meta charset="utf-8">
+	<meta name="keywords" content="windweb.ru">
+	<meta name="description" content="Cайт windweb.ru | Ветер сети | Aidarov Kirill">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+	<link rel="shortcut icon" type="image/png" href="https://windweb.ru/themes/windweb/assets/favicon.png">
+	
+	<link rel="stylesheet" type="text/css" href="https://windweb.ru/themes/windweb/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="https://windweb.ru/themes/windweb/assets/style.css">
+	<link rel="stylesheet" type="text/css" href="https://windweb.ru/themes/windweb/assets/css/animate.min.css">
+	<link rel="stylesheet" type="text/css" href="https://windweb.ru/themes/windweb/assets/css/ionicons.min.css">
+	<link rel="stylesheet" type="text/css" href="https://windweb.ru/themes/windweb/assets/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://windweb.ru/themes/windweb/assets/css/social.css">
+	
+	<script src="https://windweb.ru/themes/windweb/assets/javascript/jquery-2.1.0.min.js"></script>
+	<script src="https://windweb.ru/themes/windweb/assets/javascript/bootstrap.min.js"></script>
+	<script src="https://windweb.ru/themes/windweb/assets/javascript/blocs.min.js"></script>
+	<script src="https://windweb.ru/themes/windweb/assets/javascript/lazysizes.min.js" defer></script>
+	<script src="https://windweb.ru/themes/windweb/assets/javascript/social.js" defer></script>
+	<title>windweb.ru</title>
 
-            <!-- LOGO -->
-            <button class="xPacButton" id="logo" onclick="manualChangeExpac(); playButtonAudio(1);"></button>
-            
-            <!--QUIT BUTTON AND OPTIONS BUTTON-->
-            <div id="quitButtonContainer" class="foreground">
-                <button id="optButton" class="button" onclick="playButtonAudio(0); showSettings();" > Options </button>
-                <button id="quitButton" class="button" onclick="location.href='https://windweb.ru/'; playButtonAudio(0);" > Quit </button>
+	
+<!-- Google Analytics -->
+ 
+<!-- Google Analytics END -->
+
+</head>
+<body>
+<!-- Main container -->
+<div class="page-container">
+     <!-- bloc-3 -->
+<div class="bloc lake-hero-bloc bgc-black bg-windweb-kirill d-bloc bloc-fill-screen" id="bloc-3">
+	<div class="container fill-bloc-top-edge">
+		<nav class="navbar row">
+			<div class="navbar-header">
+				<a class="navbar-brand " href="https://windweb.ru"><img src="img/lazyload-ph.png" data-src="https://windweb.ru/themes/windweb/assets/images/windweb_48.png" alt="logo" class="lazyload" />WindWeb.ru</a>
+				<button id="nav-toggle" type="button" class="ui-navbar-toggle navbar-toggle" data-toggle="collapse" data-target=".navbar-1">
+					<span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="collapse navbar-collapse navbar-1">
+				<ul class="site-navigation nav navbar-nav pull-right">
+					<li>
+						<a href="https://windweb.ru">Home</a>
+					</li>
+					<li>
+						<a href="https://windweb.ru/Blog">Blog</a>
+					</li>
+					<li>
+						<a href="https://windweb.ru/Contact">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8">
+				<div>
+					<h1 class="fadeIn  text-justify animated">
+	Иду к успеху сам
+</h1>				</div>
+				<div>
+					<h3 class="mg-lg fadeInUp animDelay06  text-left animated">
+	и тяну за собой окружающих
+</h3>				</div>
+			</div>
+			<div class="col-sm-4">
+			</div>
+		</div>
+	</div>
+	<div class="container fill-bloc-bottom-edge">
+		<div class="row">
+			<div class="col-sm-12">
+				<a id="scroll-hero" class="blocs-hero-btn-dwn" href="#"><span class="fa fa-chevron-down"></span></a>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- bloc-3 END -->
+
+<!-- bloc-4 -->
+<div class="bloc bgc-white" id="bloc-4">
+	<div class="container bloc-lg">
+		<div>
+			<div class="row">
+	<div class="col-sm-12">
+		<h3 class="mg-sm">
+			<strong>WindWeb - Ветер сети | Автор блога - Aidarov Kirill</strong>
+		</h3>
+		<p class="mg-lg">
+			Добрый день<br>
+			Вы попали на личный сайт Айдарова Кирилла.<br>
+			Ниже указаны мои контактные данные в социальных сетях <br>
+			Подписывайтесь, буду рад продуктивному общению!:)
+		</p>
+	</div>
             </div>
-            
-            <!--OPTIONS PANEL-->
-            <div class="centered" id="options" style="display: none;">
-                <div class="UIBox" style="width: 450px; height: 15px;"></div>
-                <div class="UIBoxBackground" style="width: 500px; height: 75px;"></div>
-
-                <div class="slidecontainer">
-                    <p class="text" style="position: fixed; margin-top: 0%;">Sound</p>
-                    <input type="range" min="1" max="100" value="50" class="slider" id="volumeSlider" oninput="adjustVolume();">
-                </div>
-            </div>
-
-            <!--QUEUE BOX-->
-            <div class="centered" id="queue">
-                <div class="UIBox" style="width: 450px; height: 100px;"></div>
-                <div class="UIBoxBackground" style="width: 500px; height: 150px;"></div>
-                
-                <div id="queueTextContainer">
-                    <p class="queueText">Realm is Full</p>
-                    <p class="queueText" id="queuePosition">Position in Queue: 0000</p>
-                    <p class="queueText" id="queueTime">Estimated time: 999 min</p>
-                </div>
-                
-                <button class="button" id="realmListButton" onclick="playButtonAudio(0); doDisconnect();"> Change Realm </button>
-            </div>
-
-            <!--DISCONNECT MESSAGE-->
-            <div class="centered" id="disconnectBox" style="display: none;">
-                <div class="UIBox" style="width: 550px; height: 100px;"></div>
-                <div class="UIBoxBackground" style="width: 600px; height: 150px;"></div>
-                
-                <div id="dcTextContainer">
-                    <p class="queueText">You have been disconnected from the server.</p>
-                    <p class="queueText">(WOW51900319)</p>
-                </div>
-                
-                <button class="button" id="disconButton" onclick="playButtonAudio(1); resetQueue();"> Okay </button>
-            </div>
-
-            <!--COPYRIGHT TEXT-->
-            <div class="fullWidth">
-                <p id="copyrightText">Copyright 2004-2022 Blizzard Entertainment. All Right Reserved.</p>
-            </div>
-
-            <!--BUILD VER-->
-            <p id="buildVersion">Version 3.4.0 (46158) (Release x64)</p>
-
-            <!--BUILD DATE-->
-            <p id="buildDate">Oct 14 2022</p>
-
-            <!-- BACKGROUND -->
-            <div class="fullScreen">
-                <div class="centered">
-                    <video autoplay muted="true" loop id="background">
-                        <source src="assets/img/bg/WrathOfTheLichKing.webm" type="video/webm">
-                        <source src="assets/img/bg/Wrathofthelichking.mp4" type="video/mp4">
-                    </video>
-                </div>
-            </div>
-
         </div>
-    </body>
+	</div>
+</div>
+<!-- bloc-4 END -->
+
+<!-- bloc-5 --> 
+<div ontouchstart="" class="wrapper">
+
+    <main>
+ 
+<div class="row">
+	<div class="col-sm-2">
+		<div class="text-center"><a class="social-lg" href="mailto:admin@windweb.ru" rel="nofollow noopener noreferrer" target="_blank">&nbsp;<span class="ion ion-ios-email-outline icon-lg windweb_mail">&nbsp;</span>&nbsp;</a></div>
+	</div>
+	<div class="col-sm-2">
+		<div class="text-center"><a class="social-lg" href="https://www.facebook.com/windweb" rel="nofollow noopener noreferrer" target="_blank"><span class="fa fa-facebook icon-lg windweb_fb"></span></a></div>
+	</div>
+	<div class="col-sm-2">
+		<div class="text-center"><a class="social-lg" href="https://wa.me/79213659302" rel="nofollow noopener noreferrer" target="_blank">&nbsp;<span class="ion ion-social-whatsapp-outline icon-lg none windweb_watsapp">&nbsp;</span>&nbsp;</a></div>
+	</div>
+	<div class="col-sm-2">
+		<div class="text-center"><a class="social-lg" href="skype%3Aaidarovkirill?chat" rel="nofollow noopener noreferrer" target="_blank">&nbsp;<span class="ion ion-social-skype-outline icon-lg windweb_skype">&nbsp;</span>&nbsp;</a></div>
+	</div>
+	<div class="col-sm-2">
+		<div class="text-center"><a class="social-lg" href="https://vk.com/windweb" rel="nofollow noopener noreferrer" target="_blank"><span class="fa fa-vk icon-lg windweb_vk"></span></a></div>
+	</div>
+	<div class="col-sm-2">
+		<div class="text-center"><a class="social-lg" href="https://www.instagram.com/best_sail/" rel="nofollow noopener noreferrer" target="_blank"><span class="fa fa-instagram icon-lg windweb_insta"></span></a></div>
+	</div>
+    <div class="col-sm-2">
+        <div class="text-center"><a class="social-lg" href="https://github.com/windweb" rel="nofollow noopener noreferrer" target="_blank"><span class="fab fa-github icon-github windweb_github"></span></a></div>
+	</div>
+     <!-- /*           <span class="icon icon-front github"><i class="fab fa-github"></i></span>
+                        <span class="icon icon-back"><i class="fas fa fa-external-link"></i></span> */ -->
+</div> 
+		</div>
+	</div>
+</div> 
+<!-- bloc-5 END -->
+<!-- ScrollToTop Button -->
+<a class="bloc-button btn btn-d scrollToTop" onclick="scrollToTarget('1')"><span class="fa fa-chevron-up"></span></a>
+<!-- ScrollToTop Button END-->
+<!-- Yandex.Metrika counter -->
+<!-- /Yandex.Metrika counter --><p class="copyright" align="justify" font-size="1em";>&copy; <a href="https://aidarov.ru">Айдаров К.В.</a></p></div>
+<!-- Main container END -->
+<!-- Preloader -->
+<div id="page-loading-blocs-notifaction"></div>
+<!-- Preloader END -->
+
+</body>
 </html>
