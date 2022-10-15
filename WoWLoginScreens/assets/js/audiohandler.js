@@ -1,6 +1,6 @@
-var expansion = 9;
+let expansion = 9;
 
-var expansionMap = [
+const expansionMap = [
     'Vanilla',
     'BurningCrusade',
     'WrathOfTheLichKing',
@@ -11,13 +11,13 @@ var expansionMap = [
     'BattleForAzeroth',
     'Shadowlands',
     'WrathOfTheLichKingClassic'
-]
+];
 
-var audioPath = './assets/audio';
-var videoPath = './assets/img/bg';
-var logoPath = './assets/img/ui/logos';
+const audioPath = './assets/audio';
+const videoPath = './assets/img/bg';
+const logoPath = './assets/img/ui/logos';
 
-var verMap = [
+const verMap = [
     'Version 1.12.1 (5875) (Release)',
     'Version 2.4.3 (8606) (Release)',
     'Version 3.3.5 (12340) (Release)',
@@ -30,7 +30,7 @@ var verMap = [
     'Version 3.4.0 (46158) (Release x64)'
 ];
 
-var dateMap = [
+const dateMap = [
     'Sept 19 2006',
     'Jul 10 2008',
     'Jun 24 2010',
@@ -43,7 +43,7 @@ var dateMap = [
     'Oct 14 2022'
 ];
 
-var buttonColorMap = [
+const buttonColorMap = [
     0,
     0,
     1,
@@ -56,7 +56,7 @@ var buttonColorMap = [
     0
 ];
 
-var copyMap = [
+const copyMap = [
     2006,
     2008,
     2010,
@@ -69,12 +69,12 @@ var copyMap = [
     2022
 ];
 
-var cursor;
-var audio = new Audio();
-var buttonAudio = new Audio();
-var audioInitialPlayback = false;
-var queuePos = null;
-var disconnected = false;
+/* let cursor; */
+const audio = new Audio();
+const buttonAudio = new Audio();
+let audioInitialPlayback = false;
+let queuePos = null;
+let disconnected = false;
 
 function init()
 {
@@ -101,7 +101,7 @@ function determineIfDisconnect()
 {
     if(!disconnected)
     {
-        var rand = Math.random();
+        const rand = Math.random();
         if(rand < 0.75)
             getPositionInQueue();
     }
@@ -109,7 +109,7 @@ function determineIfDisconnect()
 
 function getPositionInQueue()
 {
-    var number;
+    let number;
     if(queuePos === null)
     {    
         number = Math.floor(Math.random() * Math.floor(10000));
@@ -134,7 +134,7 @@ function getPositionInQueue()
 
 function getEstimatedTime(qPos)
 {
-    var time = Math.floor(Math.floor(qPos*2*3*2 + ((qPos*2*3*3) - (qPos*2*3*2)) * Math.random()) * 0.01);
+    const time = Math.floor(Math.floor(qPos * 2 * 3 * 2 + ((qPos * 2 * 3 * 3) - (qPos * 2 * 3 * 2)) * Math.random()) * 0.01);
     document.getElementById('queueTime').innerHTML = 'Estimated time: ' + time + ' min';
 }
 
@@ -153,8 +153,8 @@ function manualChangeExpac()
     expansion += 1;
     if(expansion > 9)
         expansion = 0;
-    
-    var bg = document.getElementById('background');
+
+    const bg = document.getElementById('background');
     bg.muted = false;
     switchExpansion();
 }
@@ -169,17 +169,17 @@ function switchExpansion()
     }
     queuePos = null;
     getPositionInQueue();
-    var bg = document.getElementById('background');
-    var bgWebM = bg.querySelector('source:nth-child(1)');
-    var bgMp4 = bg.querySelector('source:nth-child(2)');
-    var logo = document.getElementById('logo');
-    var version = document.getElementById('buildVersion');
-    var date = document.getElementById('buildDate');
-    var copyright = document.getElementById('copyrightText');
+    const bg = document.getElementById('background');
+    const bgWebM = bg.querySelector('source:nth-child(1)');
+    const bgMp4 = bg.querySelector('source:nth-child(2)');
+    const logo = document.getElementById('logo');
+    const version = document.getElementById('buildVersion');
+    const date = document.getElementById('buildDate');
+    let copyright = document.getElementById('copyrightText');
     
     bg.pause();
     audio.pause();
-    var expName = expansionMap[expansion];
+    const expName = expansionMap[expansion];
     console.log(expName);
     audio.src = `${audioPath}/${expName}.ogg`;
     bgWebM.setAttribute('src', `${videoPath}/${expName}.webm`);
@@ -211,7 +211,7 @@ function playButtonAudio(index)
 
 function hideQueue()
 {
-    var x = document.getElementById("queue");
+    const x = document.getElementById("queue");
     if(x.style.display === "none")
         x.style.display = "flex";
     else
@@ -220,7 +220,7 @@ function hideQueue()
 
 function showDisconnect()
 {
-    var x = document.getElementById("disconnectBox");
+    const x = document.getElementById("disconnectBox");
     if(x.style.display === "none")
         x.style.display = "flex";
     else
@@ -236,8 +236,8 @@ function resetQueue()
 
 function showSettings()
 {
-    var opt = document.getElementById("options");
-    if(opt.style.display == "none")
+    const opt = document.getElementById("options");
+    if(opt.style.display === "none")
     {
         opt.style.display = "flex";
     }
@@ -249,8 +249,8 @@ function showSettings()
 
 function adjustVolume()
 {
-    var slider = document.getElementById("volumeSlider");
-    var val = slider.value * 0.01;
+    const slider = document.getElementById("volumeSlider");
+    const val = slider.value * 0.01;
     audio.volume = val;
     buttonAudio.volume = val;
     document.getElementById('background').volume = val;
@@ -258,10 +258,10 @@ function adjustVolume()
 
 function setButtonColors(index)
 {
-    var quitButton = document.getElementById("quitButton");
-    var optButton = document.getElementById("optButton");
-    var realmListButton = document.getElementById("realmListButton");
-    var disconButton = document.getElementById("disconButton");
+    const quitButton = document.getElementById("quitButton");
+    const optButton = document.getElementById("optButton");
+    const realmListButton = document.getElementById("realmListButton");
+    const disconButton = document.getElementById("disconButton");
     switch(index)
     {
         case 0:
