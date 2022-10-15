@@ -1,4 +1,4 @@
-var expansion = 11;
+var expansion = 9;
 
 var expansionMap = [
     'Vanilla',
@@ -151,7 +151,7 @@ function manualChangeExpac()
 {
     console.log("Changing xpac to: ");
     expansion += 1;
-    if(expansion > 8)
+    if(expansion > 9)
         expansion = 0;
     
     var bg = document.getElementById('background');
