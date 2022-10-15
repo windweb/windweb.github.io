@@ -27,7 +27,7 @@ const verMap = [
     'Version 7.3.5 (26365) (Release x64)',
     'Version 8.3.7 (35662) (Release x64)',
     'Version 9.0.1 (35944) (Release x64)',
-    'Version 3.4.0 (46158) (Release x64)'
+    'Версия 3.4.0 (46158) (релиз x64)'
 ];
 
 const dateMap = [
@@ -128,14 +128,14 @@ function getPositionInQueue()
         }
     }
 
-    document.getElementById('queuePosition').innerHTML = 'Position in Queue: ' + number;
+    document.getElementById('queuePosition').innerHTML = 'Место в очереди: ' + number;
     getEstimatedTime(number)
 }
 
 function getEstimatedTime(qPos)
 {
     const time = Math.floor(Math.floor(qPos * 2 * 3 * 2 + ((qPos * 2 * 3 * 3) - (qPos * 2 * 3 * 2)) * Math.random()) * 0.01);
-    document.getElementById('queueTime').innerHTML = 'Estimated time: ' + time + ' min';
+    document.getElementById('queueTime').innerHTML = 'Время ожидания: ' + time + ' мин.';
 }
 
 function doDisconnect()
@@ -187,7 +187,7 @@ function switchExpansion()
     logo.style.background = `url(${logoPath}/${expName}.png)`;
     version.textContent = verMap[expansion];
     date.textContent = dateMap[expansion];
-    copyright.textContent = `Copyright 2004-${copyMap[expansion]} Blizzard Entertainment. All Right Reserved.`;
+    copyright.textContent = `© 2004-${copyMap[expansion]} Blizzard Entertainment. Все права защищены.`;
     setButtonColors(buttonColorMap[expansion]);
     
     bg.load();
