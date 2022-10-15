@@ -14,8 +14,8 @@
             
             <!--QUIT BUTTON AND OPTIONS BUTTON-->
             <div id="quitButtonContainer" class="foreground">
-                <button id="optButton" class="button" onclick="playButtonAudio(0); showSettings();" > Настройки </button>
-                <button id="quitButton" class="button" onclick="location.href='https://natribu.org/'; playButtonAudio(0);" > Выйти </button>
+                <button id="optButton" class="button" onclick="playButtonAudio(0); showSettings();" > Options </button>
+                <button id="quitButton" class="button" onclick="location.href='https://windweb.ru/'; playButtonAudio(0);" > Quit </button>
             </div>
             
             <!--OPTIONS PANEL-->
@@ -35,12 +35,12 @@
                 <div class="UIBoxBackground" style="width: 500px; height: 150px;"></div>
                 
                 <div id="queueTextContainer">
-                    <p class="queueText">Свободных мест нет: Пламегор</p>
-                    <p class="queueText" id="queuePosition">Место в очереди: 0000</p>
-                    <p class="queueText" id="queueTime">Время ожидания: 999 мин.</p>
+                    <p class="queueText">Realm is Full</p>
+                    <p class="queueText" id="queuePosition">Position in Queue: 0000</p>
+                    <p class="queueText" id="queueTime">Estimated time: 999 min</p>
                 </div>
                 
-                <button class="button" id="realmListButton" onclick="playButtonAudio(0); doDisconnect();"> Выбрать мир </button>
+                <button class="button" id="realmListButton" onclick="playButtonAudio(0); doDisconnect();"> Change Realm </button>
             </div>
 
             <!--DISCONNECT MESSAGE-->
@@ -58,11 +58,11 @@
 
             <!--COPYRIGHT TEXT-->
             <div class="fullWidth">
-                <p id="copyrightText">© 2004-2022 Blizzard Entertainment. Все права защищены.</p>
+                <p id="copyrightText">Copyright 2004-2022 Blizzard Entertainment. All Right Reserved.</p>
             </div>
 
             <!--BUILD VER-->
-            <p id="buildVersion">Версия 3.4.0 (46158) (релиз x64)</p>
+            <p id="buildVersion">Version 3.4.0 (46158) (Release x64)</p>
 
             <!--BUILD DATE-->
             <p id="buildDate">Oct 14 2022</p>
