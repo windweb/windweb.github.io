@@ -1,4 +1,4 @@
-var expansion = 9;
+var expansion = 10;
 
 var expansionMap = [
     'Vanilla',
@@ -47,6 +47,7 @@ var buttonColorMap = [
     0,
     0,
     1,
+    0,
     0,
     0,
     0,
